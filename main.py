@@ -72,11 +72,11 @@ def start_training(character) -> str:
           'defence — чтобы блокировать атаку противника '
           'или special — чтобы использовать свою суперсилу.')
     print('Если не хочешь тренироваться, введи команду skip.')
-    commands ={'attack': character.attack, 
-               'defence': character.defence, 
-               'special': character.special}
+    commands ={'attack': character.attack(), 
+               'defence': character.defence(), 
+               'special': character.special()}
     command: str = None
-    while commands[command] != 'skip':
+    while command != 'skip':
         command = input('Введи команду: ')
         if command in commands:
             print(commands[command])
